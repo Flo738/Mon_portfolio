@@ -100,7 +100,7 @@ export default function Skills() {
 
 
     return (
-        <section className="relative py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
+        <section className="relative min-h-screen py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
             <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-violet-950/20" />
 
             <canvas ref={canvasRef} className="absolute inset-0 opacity-40" />

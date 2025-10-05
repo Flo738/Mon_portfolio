@@ -51,7 +51,7 @@ export default function Contact() {
                         Travaillons ensemble
                     </h2>
                     <p className="text-slate-400 text-lg">
-                        Contactez-moi pour pour toutes questions
+                        Contactez-moi pour toute question
                     </p>
                 </div>
 

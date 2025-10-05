@@ -7,7 +7,6 @@ export default function Navigation() {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
             <div className="max-w-7xl mx-auto px-6 py-6">
-                {/* Desktop Navigation */}
                 <div className="hidden md:flex justify-center items-center gap-12">
                     <a href="/CV_alternance.pdf" download className="text-slate-300 hover:text-white transition-colors text-sm p-1">
                         Cv
@@ -24,7 +23,6 @@ export default function Navigation() {
                     </a>
                 </div>
 
-                {/* Mobile Hamburger Button */}
                 <div className="md:hidden">
                     <button onClick={() => setIsOpen(!isOpen)} className="ml-auto block text-white focus:outline-none" aria-label="Toggle menu">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,10 +32,8 @@ export default function Navigation() {
                 </div>
             </div>
 
-            {/* Mobile Full Screen Menu */}
             {isOpen && (
                 <div className="fixed inset-0 top-0 bg-[#0a0e27] z-50 flex flex-col md:hidden">
-                    {/* Close Button */}
                     <div className="flex justify-end p-6">
                         <button onClick={() => setIsOpen(false)} className="text-white focus:outline-none">
                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,7 +42,6 @@ export default function Navigation() {
                         </button>
                     </div>
 
-                    {/* Centered Menu Links */}
                     <div className="flex-1 flex flex-col items-center justify-center gap-8">
                         <a href="/CV_alternance.pdf" download onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white transition-colors text-2xl">
                             Cv

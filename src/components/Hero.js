@@ -161,9 +161,11 @@ export default function Hero() {
                     </a>
                 </div>
                 <div className={`flex flex-col sm:flex-row gap-4 items-center md:items-start transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <button className="px-6 py-3 text-base bg-violet-600 hover:bg-violet-700 border border-slate-700 hover:border-violet-400/50 text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-auto">
-                        <span>Me contacter</span>
-                    </button>
+                    <a href="#contact">
+                        <button className="px-6 py-3 text-base bg-violet-600 hover:bg-violet-700 border border-slate-700 hover:border-violet-400/50 text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-auto">
+                            <span>Me contacter</span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

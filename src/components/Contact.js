@@ -50,9 +50,6 @@ export default function Contact() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
                         Travaillons ensemble
                     </h2>
-                    <p className="text-slate-400 text-lg">
-                        N'hésitez pas à me contacter
-                    </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="w-full max-w-3xl mx-auto">

@@ -69,7 +69,7 @@ export default function Projects() {
                         Projets Réalisés
                     </h2>
                     <p className="text-slate-400 text-lg">
-                        Quelques projets sur lesquels j'ai travaillé
+                        Voici quelques projets
                     </p>
                 </div>
 

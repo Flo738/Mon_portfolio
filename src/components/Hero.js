@@ -129,7 +129,7 @@ export default function Hero() {
                 <p className={`text-lg sm:text-xl mb-6 sm:mb-8 text-slate-300 leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                     Je suis passionné par le développement web et toujours prêt à relever de nouveaux défis.
                     <br />
-                    Création d'expériences  <span className="text-violet-300 font-semibold"> web modernes </span>,  et <span className="text-violet-300 font-semibold"> performantes. </span>
+                    Création de solutions  <span className="text-violet-300 font-semibold"> web modernes </span>,  et <span className="text-violet-300 font-semibold"> performantes. </span>
                 </p>
 
                 <div className={`flex gap-3 justify-center md:justify-start mb-6 sm:mb-8 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>

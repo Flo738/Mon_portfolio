@@ -114,7 +114,7 @@ export default function Skills() {
                         Stack Technique
                     </h2>
                     <p className="text-slate-400 text-lg">
-                        Technologies et outils que j'utilise
+                        Technologies et outils utilisés
                     </p>
                 </div>
                 <div className="flex justify-center gap-4 mb-12">

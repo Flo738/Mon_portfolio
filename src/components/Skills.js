@@ -31,12 +31,11 @@ const skills = [
 
 export default function Skills() {
     const [selectedCategory, setSelectedCategory] = useState('Frontend')
-    const { canvasRef, scene, camera, renderer } = useThreeback('skills')
+    const { canvasRef, scene, camera, renderer, isMobile } = useThreeback('skills')
     const filteredSkills = skills.filter(skill => skill.category === selectedCategory)
 
     useEffect(() => {
-        console.log('🌌 Galaxy useEffect exécuté')
-        if (!scene || !camera || !renderer) return
+        if (isMobile || !scene || !camera || !renderer) return
 
         const particlesCount = 2500
         const particlesGeometry = new THREE.BufferGeometry()
@@ -83,10 +82,8 @@ export default function Skills() {
 
         const animate = () => {
             animationId = requestAnimationFrame(animate)
-
             particles.rotation.y += 0.0002
             particles.rotation.x = 0.3
-
             renderer.render(scene, camera)
         }
         animate()
@@ -96,14 +93,13 @@ export default function Skills() {
             particlesGeometry.dispose()
             particlesMaterial.dispose()
         }
-    }, [scene, camera, renderer])
-
+    }, [scene, camera, renderer, isMobile])
 
     return (
-        <section className="relative min-h-screen py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
+        <section className="relative py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
             <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-violet-950/20" />
 
-            <canvas ref={canvasRef} className="absolute inset-0 opacity-40" />
+            {!isMobile && <canvas ref={canvasRef} className="absolute inset-0 opacity-40" />}
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 <div className="mb-16 text-center">

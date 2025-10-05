@@ -39,10 +39,10 @@ export default function Contact() {
     }
 
     return (
-        <section className="relative py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="contact">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0e27] overflow-hidden" id="contact">
             <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-violet-950/20"/>
 
-            <div className="relative z-10 max-w-3xl mx-auto">
+            <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
                 <div className="mb-16 text-center">
                     <span className="inline-block px-4 py-1.5 mb-4 bg-violet-500/20 border border-violet-400/30 text-violet-300 text-sm font-medium">
                         Me contacter
@@ -50,9 +50,12 @@ export default function Contact() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
                         Travaillons ensemble
                     </h2>
+                    <p className="text-slate-400 text-lg">
+                        Contactez-moi pour pour toutes questions
+                    </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="w-full max-w-3xl mx-auto">
+                <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto">
                     <div className="space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">

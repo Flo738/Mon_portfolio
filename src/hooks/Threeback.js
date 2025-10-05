@@ -1,14 +1,19 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
-import { useState } from 'react'
 
-export function useThreeback( variant = 'hero') {
+export function useThreeback(variant = 'hero', disableMobileCheck = false) {
     const canvasRef = useRef(null)
     const mouseRef = useRef({ x: 0, y: 0 })
     const [threeObjects, setThreeObjects] = useState(null)
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
+        const checkMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+        setIsMobile(checkMobile)
+
+        if (checkMobile && !disableMobileCheck) return
+
         if (!canvasRef.current) return
 
         const scene = new THREE.Scene()
@@ -42,11 +47,11 @@ export function useThreeback( variant = 'hero') {
         setThreeObjects({ scene, camera, renderer })
 
         return () => {
-                window.removeEventListener('mousemove', handleMouseMove)
-                window.removeEventListener('resize', handleResize)
-                renderer.dispose()
+            window.removeEventListener('mousemove', handleMouseMove)
+            window.removeEventListener('resize', handleResize)
+            renderer.dispose()
         }
-    }, [variant])
+    }, [variant, disableMobileCheck])
 
-    return { canvasRef, mouseRef, ...(threeObjects || {}) }
+    return { canvasRef, mouseRef, isMobile, ...(threeObjects || {}) }
 }

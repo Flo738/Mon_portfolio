@@ -13,12 +13,16 @@ export function useThreeback(variant = 'hero', disableMobileCheck = false) {
         setIsMobile(checkMobile)
 
         if (checkMobile && !disableMobileCheck) return
-
         if (!canvasRef.current) return
 
         const scene = new THREE.Scene()
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true, antialias: true })
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvasRef.current,
+            alpha: true,
+            antialias: false,
+            powerPreference: 'high-performance'
+        })
 
         renderer.setSize(window.innerWidth, window.innerHeight)
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -31,11 +35,18 @@ export function useThreeback(variant = 'hero', disableMobileCheck = false) {
         pointLight.position.set(variant === 'hero' ? 5 : 10, variant === 'hero' ? 5 : 10, variant === 'hero' ? 5 : 10)
         scene.add(pointLight)
 
+        let lastTime = 0
+        const throttleDelay = 16
+
         const handleMouseMove = (e) => {
+            const now = Date.now()
+            if (now - lastTime < throttleDelay) return
+            lastTime = now
+
             mouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1
             mouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1
         }
-        window.addEventListener('mousemove', handleMouseMove)
+        window.addEventListener('mousemove', handleMouseMove, { passive: true })
 
         const handleResize = () => {
             camera.aspect = window.innerWidth / window.innerHeight

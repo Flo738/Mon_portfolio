@@ -37,7 +37,7 @@ export default function Skills() {
     useEffect(() => {
         if (isMobile || !scene || !camera || !renderer) return
 
-        const particlesCount = 2500
+        const particlesCount = 1500
         const particlesGeometry = new THREE.BufferGeometry()
         const positions = new Float32Array(particlesCount * 3)
         const colors = new Float32Array(particlesCount * 3)
@@ -96,7 +96,7 @@ export default function Skills() {
     }, [scene, camera, renderer, isMobile])
 
     return (
-        <section className="relative py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
+        <section className="relative min-h-screen py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
             <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-violet-950/20" />
 
             {!isMobile && <canvas ref={canvasRef} className="absolute inset-0 opacity-40" />}

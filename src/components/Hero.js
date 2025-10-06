@@ -41,7 +41,7 @@ export default function Hero() {
         const innerShape = new THREE.LineSegments(innerEdges, innerMaterial)
         scene.add(innerShape)
 
-        const particlesCount = window.innerWidth < 768 ? 50 : 80
+        const particlesCount = 50
         const particlesGeometry = new THREE.BufferGeometry()
         const positions = new Float32Array(particlesCount * 3)
         for (let i = 0; i < particlesCount * 3; i++) {
@@ -63,16 +63,17 @@ export default function Hero() {
 
         const animate = () => {
             animationId = requestAnimationFrame(animate)
+
             mainShape.rotation.x += 0.003
             mainShape.rotation.y += 0.005
             innerShape.rotation.x += 0.004
             innerShape.rotation.y += 0.006
 
             if (window.innerWidth >= 768) {
-                mainShape.rotation.y += mouseRef.current.x * 0.01
-                mainShape.rotation.x += mouseRef.current.y * 0.01
-                innerShape.rotation.y += mouseRef.current.x * 0.008
-                innerShape.rotation.x += mouseRef.current.y * 0.008
+                mainShape.rotation.y += mouseRef.current.x * 0.003
+                mainShape.rotation.x += mouseRef.current.y * 0.003
+                innerShape.rotation.y += mouseRef.current.x * 0.002
+                innerShape.rotation.x += mouseRef.current.y * 0.002
             }
 
             particles.rotation.y += 0.003
@@ -117,7 +118,7 @@ export default function Hero() {
 
                         <p className={`text-lg sm:text-xl mb-6 sm:mb-8 text-slate-300 leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                             Je suis passionné par le développement web et toujours prêt à relever de nouveaux défis.<br />
-                            Création de solutions <span className="text-violet-300 font-semibold">web modernes</span> et <span className="text-violet-300 font-semibold">performantes.</span>
+                            Création de solutions <span className="text-violet-300 font-semibold">web modernes</span> et <span className="text-violet-300 font-semibold">performantes</span>.
                         </p>
 
                         <div className={`flex gap-3 justify-center md:justify-start mb-6 sm:mb-8 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>

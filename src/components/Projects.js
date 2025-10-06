@@ -6,7 +6,7 @@ import Link from 'next/link'
 const projects = [
     {
         id: 1,
-        title: "Simultaur de transports",
+        title: "Simulateur de transports",
         description: "Plateforme d'affichage de trains en django avec interface de recherche, ect",
         image: "/projet_trains.png",
         technologies: ["Django", "CSS"],
@@ -26,7 +26,7 @@ const projects = [
         description: "Plateforme e-commerce",
         image: "/Sitevitrine.png",
         technologies: ["HTML", "CSS", "Javascript"],
-        lien: "https://github.com/Flo738/Site"
+        lien: "/TP/index.html"
     },
     {
         id: 4,

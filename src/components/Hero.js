@@ -122,10 +122,10 @@ export default function Hero() {
 
                         <div className={`flex gap-3 justify-center md:justify-start mb-6 sm:mb-8 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                             <a href="https://github.com/Flo738" target="_blank" rel="noopener noreferrer">
-                                <Image src="/github.svg" alt="GitHub" width={31} height={31} className="opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                                <Image src="/githublogo.png" alt="GitHub" width={31} height={31} className="opacity-70 hover:opacity-100 transition-opacity duration-300" />
                             </a>
                             <a href="https://www.linkedin.com/in/florian-pacard/" target="_blank" rel="noopener noreferrer">
-                                <Image src="/linkedin.svg" alt="LinkedIn" width={36} height={36} className="opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                                <Image src="/linkedinlogo.png" alt="LinkedIn" width={32} height={32} className="opacity-70 hover:opacity-100 transition-opacity duration-300" />
                             </a>
                         </div>
 

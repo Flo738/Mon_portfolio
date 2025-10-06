@@ -15,6 +15,9 @@ export const metadata = {
     title: "Florian Pacard - Développeur Full-Stack ",
     description: "Portfolio de Florian Pacard, développeur Full-Stack. Découvrez mes projets web modernes et mes compétences techniques.",
     keywords: "développeur web, full-stack, React, Next.js, Node.js, portfolio",
+    icons: {
+        icon: '/portfolioicon.svg',
+    },
 };
 
 export default function RootLayout({ children }) {

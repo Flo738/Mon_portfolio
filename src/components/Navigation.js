@@ -62,33 +62,33 @@ export default function Navigation() {
                         </button>
                     </div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center gap-10">
+                    <div className="flex-1 flex flex-col items-center justify-center gap-8">
                         <a
                             href="/CV_alternance.pdf"
                             download
                             onClick={() => setIsOpen(false)}
-                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-3xl font-medium transform hover:scale-110"
+                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-xl font-medium"
                         >
                             CV
                         </a>
                         <a
                             href="#projets"
                             onClick={() => setIsOpen(false)}
-                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-3xl font-medium transform hover:scale-110"
+                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-xl font-medium"
                         >
                             Projets
                         </a>
                         <a
                             href="#competences"
                             onClick={() => setIsOpen(false)}
-                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-3xl font-medium transform hover:scale-110"
+                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-xl font-medium"
                         >
                             Compétences
                         </a>
                         <a
                             href="#contact"
                             onClick={() => setIsOpen(false)}
-                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-3xl font-medium transform hover:scale-110"
+                            className="text-slate-200 hover:text-violet-400 transition-all duration-300 text-xl font-medium"
                         >
                             Contact
                         </a>

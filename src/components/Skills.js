@@ -37,26 +37,28 @@ export default function Skills() {
     useEffect(() => {
         if (isMobile || !scene || !camera || !renderer) return
 
-        const particlesCount = 1500
+        const particlesCount = 3000
         const particlesGeometry = new THREE.BufferGeometry()
         const positions = new Float32Array(particlesCount * 3)
         const colors = new Float32Array(particlesCount * 3)
 
         for (let i = 0; i < particlesCount; i++) {
-            const radius = Math.random() * 20
-            const spinAngle = radius * 0.5
-            const branchAngle = ((i % 4) / 4) * Math.PI * 2
+            const radius = Math.random() * 30
+            const spinAngle = radius * 0.4
+            const branchAngle = ((i % 5) / 5) * Math.PI * 2
 
-            const randomX = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * 2
-            const randomY = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * 2
-            const randomZ = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * 2
+            const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 3
+            const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 3
+            const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 3
 
             positions[i * 3] = Math.cos(branchAngle + spinAngle) * radius + randomX
-            positions[i * 3 + 1] = randomY * 0.3
+            positions[i * 3 + 1] = randomY * 0.5
             positions[i * 3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
 
             const mixedColor = new THREE.Color()
-            mixedColor.setHSL(0.75 + Math.random() * 0.05, 0.7, 0.4 + Math.random() * 0.4)
+            const hue = 0.75 + Math.random() * 0.08
+            const lightness = 0.5 + Math.random() * 0.3
+            mixedColor.setHSL(hue, 0.8, lightness)
 
             colors[i * 3] = mixedColor.r
             colors[i * 3 + 1] = mixedColor.g
@@ -67,9 +69,9 @@ export default function Skills() {
         particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
 
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.06,
+            size: 0.08,
             transparent: true,
-            opacity: 0.7,
+            opacity: 0.8,
             vertexColors: true,
             blending: THREE.AdditiveBlending,
             depthWrite: false
@@ -82,8 +84,9 @@ export default function Skills() {
 
         const animate = () => {
             animationId = requestAnimationFrame(animate)
-            particles.rotation.y += 0.0002
-            particles.rotation.x = 0.3
+            particles.rotation.y += 0.0003
+            particles.rotation.x = 0.4
+            particles.rotation.z = 0.1
             renderer.render(scene, camera)
         }
         animate()
@@ -99,7 +102,7 @@ export default function Skills() {
         <section className="relative min-h-screen py-20 px-4 sm:px-6 bg-[#0a0e27] overflow-hidden" id="competences">
             <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-violet-950/20" />
 
-            {!isMobile && <canvas ref={canvasRef} className="absolute inset-0 opacity-40" />}
+            {!isMobile && <canvas ref={canvasRef} className="absolute inset-0 opacity-50" />}
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 <div className="mb-16 text-center">

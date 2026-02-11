@@ -15,6 +15,7 @@ export default function Hero() {
 
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768)
+
         }
 
         window.addEventListener('resize', handleResize)

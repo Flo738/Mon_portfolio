@@ -9,7 +9,7 @@ export default function Navigation() {
             <div className="max-w-7xl mx-auto px-6 py-6">
                 <div className="hidden md:flex justify-center items-center gap-8">
                     <a
-                        href="/CV.pdf"
+                        href="/Cv_Florian.pdf"
                         download
                         className="text-slate-300 hover:text-violet-400 transition-colors duration-300 text-lg font-medium py-2 px-4 flex items-center"
                     >
